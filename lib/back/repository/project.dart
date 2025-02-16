@@ -2,7 +2,7 @@ import '../../config.dart';
 import '../../entity/model/project.dart';
 
 abstract class ProjectRepository {
-  List<Project> FindAll();
+  Future<List<Project>> FindAll();
   List<Project> FindByKey(String key);
   List<Project> Create(String key);
   List<Project> Update(String key);
@@ -14,14 +14,19 @@ class NewProjectRepository implements ProjectRepository {
   final Config config;
   NewProjectRepository(this.config);
   @override
-  List<Project> FindAll() {
-    var projects = config.box.get('projects');
+  Future<List<Project>> FindAll() async {
+    await config.box.put('projects', 'John Doe');
+    var projects = await config.box.get('projects');
+
     print('$projects');
     return [];
   }
 
   List<Project> FindByKey(String key) {
+    config.box.put('projects/name', 'John Doe');
+    config.box.put('projects/age', 30);
     var projects = config.box.get('projects');
+
     print('$projects');
     return [];
   }

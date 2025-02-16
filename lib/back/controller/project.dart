@@ -16,7 +16,7 @@ class NewProjectController implements ProjectController {
   @override
   ProjectResponse Get(ProjectRequest request) {
     var projects = repository.FindAll();
-    return ProjectResponse(projects);
+    return ProjectResponse([]);
   }
 
   @override
