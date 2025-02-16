@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'front/router.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
