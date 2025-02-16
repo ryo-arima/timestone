@@ -21,19 +21,19 @@ class NewProjectController implements ProjectController {
 
   @override
   ProjectResponse Create(ProjectRequest request) {
-    var projects = repository.Create('key');
+    var projects = repository.Create(request.project);
     return ProjectResponse(projects);
   }
 
   @override
   ProjectResponse Update(ProjectRequest request) {
-    var projects = repository.Update('key');
+    var projects = repository.Update(request.project);
     return ProjectResponse(projects);
   }
 
   @override
   ProjectResponse Delete(ProjectRequest request) {
-    var projects = repository.Delete('key');
+    var projects = repository.Delete(request.project.id);
     return ProjectResponse(projects);
   }
 }
