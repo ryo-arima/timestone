@@ -11,14 +11,19 @@ class Bar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text('Timestone'),
       actions: <Widget>[
-        TextButton(
-          onPressed: () {
-            context.go('/projects');
+        PopupMenuButton<String>(
+          onSelected: (String result) {
+            if (result == 'projects') {
+              context.go('/projects');
+            }
           },
-          child: Text(
-            'Projects',
-            style: TextStyle(color: Colors.black),
-          ),
+          itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+            const PopupMenuItem<String>(
+              value: 'projects',
+              child: Text('Projects'),
+            ),
+          ],
+          icon: Icon(Icons.menu, color: Colors.black),
         ),
       ],
     );

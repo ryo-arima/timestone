@@ -25,13 +25,13 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
         width: 50.0,
-        height: 25.0,
+        height: 30.0,
         child: FloatingActionButton(
           backgroundColor: Theme.of(context).primaryColor,
           onPressed: () {
             Navigator.pushNamed(context, '/project');
           },
-          child: Icon(Icons.edit, color: Colors.white, size: 20.0),
+          child: Icon(Icons.edit, color: Colors.white, size: 30.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),

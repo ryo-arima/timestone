@@ -9,7 +9,7 @@ class BottomBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       color: Theme.of(context).primaryColor,
-      notchMargin: 6.0,
+      notchMargin: 4.0,
       shape: AutomaticNotchedShape(
         RoundedRectangleBorder(),
         StadiumBorder(
@@ -17,7 +17,7 @@ class BottomBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 5.0),
         child: new Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
